@@ -1,0 +1,121 @@
+Question :  Write a blog on the difference between document and window objects.
+
+Solution : 
+
+In web development, particularly when dealing with JavaScript, you often come across the terms document and window. These two objects are fundamental
+to how your code interacts with a webpage, but while they are related, they serve different purposes. In this blog, we will explore the key differences
+between the document and window objects, how they interact with each other, and when you would use one over the other.
+
+What is Window Object ?
+
+The window object is the global object representing the browser window or tab in which your webpage is displayed. Every time you open a new browser 
+window or tab, a new window object is created. This object is the top-level container for everything that happens in a browser.
+
+
+
+The window object provides access to various browser functionalities, such as:
+
+* Global variables and functions: Any global variables or functions declared in your JavaScript code are properties of the window object.
+
+* Methods and properties to control the browser: Functions like alert(), setTimeout(), setInterval(), and properties like window.innerWidth or window.location belong 
+  to the window object.
+
+* Handling browser events: Events like load, resize, and scroll are often attached to the window object.
+
+
+
+Common Properties and Methods of the window Object:
+
+* window.innerHeight & window.innerWidth: Get the height and width of the browser's viewport.
+
+* window.alert(): Display an alert dialog.
+
+* window.location: Get or set the current URL.
+
+* window.open(): Open a new browser window or tab.
+
+* window.setTimeout(): Execute a function after a specified delay.
+
+
+//Example usage of the window object:
+
+console.log(window.innerWidth);  // Outputs the width of the browser window
+window.alert('Hello! This is a window alert.');
+
+
+
+
+2. What is document object ?
+
+The document object, on the other hand, represents the HTML content (the Document Object Model, or DOM) that is loaded in the browser window. 
+It is a child of the window object. The document object allows you to interact with and manipulate the HTML and CSS of the webpage.
+
+
+
+With the document object, you can:
+
+* Access and manipulate the HTML structure: You can select, modify, and create new elements in the DOM.
+
+* Handle events on HTML elements: You can attach event listeners like click, submit, and change to DOM elements using the document.
+
+* Change CSS styles dynamically: You can update the style properties of elements on the fly.
+
+
+
+Common Properties and Methods of the document Object:
+
+* document.getElementById(): Select an element by its ID.
+
+* document.querySelector(): Select the first element that matches a CSS selector.
+
+* document.createElement(): Create a new HTML element.
+
+* document.body: Represents the <body> element of the HTML document.
+
+
+// Example usage of document object:
+
+let header = document.getElementById('header'); // Select an element by its ID
+header.innerHTML = 'Welcome to My Website';     // Modify the content of the element
+
+
+
+3. Key difference between window and document :
+
+Aspect	                                window Object	                                                       document Object
+
+Definition-->               Represents the browser window or tab.	                                  Represents the HTML document loaded in the window.
+
+Scope--->                  Global scope, accessible from anywhere.	                                   A part of the window object, deals with the DOM.
+
+Purpose-->                    Controls browser-related tasks.	                                          Manages and manipulates the webpage content (DOM).
+
+
+Common 
+Methods/Properties-->	         window.alert(), window.open(), window.location	                          document.getElementById(), document.body, 
+                                                                                                     document.createElement()
+
+Event Handling-->	             Handles events like load, resize, scroll.	                               Handles events on HTML elements like click, submit, change.
+
+Relationship-->	         The window object contains the document object.	                           The document object is a child of the window object.
+
+
+
+4. How window and document Work Together
+The window and document objects are closely related, with window being the global object that contains everything in the browser environment, 
+including the document. For example, if you type window.document in the browser's console, you'll see the entire HTML document.
+
+
+// Accessing the document object through window
+console.log(window.document);  // Outputs the entire HTML DOM
+
+While the window object provides general browser functionality, the document object focuses on manipulating the webpage content. 
+Together, they allow developers to create dynamic and interactive websites.
+
+
+
+
+
+5. When to Use window vs. document
+Use window when you need to control browser-level operations like opening new tabs, manipulating the URL, or handling viewport resizing.
+Use document when you need to manipulate or access the HTML structure of the webpage, like changing text, styles, or responding to user inputs.
